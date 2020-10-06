@@ -1,0 +1,53 @@
+@import "./variables.scss";
+
+@mixin container($direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+    > div {
+        margin: $spacing;
+    }
+}
+
+@mixin rounded($radius: 0.5em) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin box-shadow(
+    $offsetX,
+    $offsetY,
+    $blurRadius,
+    $spreadRadius,
+    $color,
+    $inset: false
+) {
+    @if $inset {
+        -webkit-box-shadow: inset
+            $offsetX
+            $offsetY
+            $blurRadius
+            $spreadRadius
+            $color;
+        -moz-box-shadow: inset
+            $offsetX
+            $offsetY
+            $blurRadius
+            $spreadRadius
+            $color;
+        box-shadow: inset $offsetX $offsetY $blurRadius $spreadRadius $color;
+    } @else {
+        -webkit-box-shadow: $offsetX $offsetY $blurRadius $spreadRadius $color;
+        -moz-box-shadow: $offsetX $offsetY $blurRadius $spreadRadius $color;
+        box-shadow: $offsetX $offsetY $blurRadius $spreadRadius $color;
+    }
+}
+
+@mixin card {
+    @include container(column);
+    @include box-shadow(0, 1px, 5px, 0, rgba(0, 0, 0, 0.4));
+    @include rounded(10px);
+    background-color: #fff;
+}

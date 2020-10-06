@@ -1,0 +1,26 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins.scss";
+
+.post-list-container {
+    .post-item-container {
+        @include card;
+        width: 500px;
+        align-items: stretch;
+        padding: $spacing;
+
+        .created-date {
+            align-self: flex-end;
+            margin: 0;
+        }
+
+        .title {
+            margin: 0;
+            margin-bottom: 15px;
+            flex-shrink: 1;
+            flex-grow: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}

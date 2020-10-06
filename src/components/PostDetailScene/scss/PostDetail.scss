@@ -1,0 +1,8 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins.scss";
+
+.post-detail-container {
+    @include container(column);
+    width: 1000px;
+    margin: auto;
+}
